@@ -38,7 +38,12 @@ wc(int fd, char *name)
     exit(1);
   }
 
-  printf("%d %d %d %s\n", l, w, c, name); 
+  if(name[0] != '\0')
+    // Only print filename if it's provided
+    printf("%d %d %d %d %s\n", l, w, c, vowels, name); // Modified the output to include the number of vowels
+  else
+    // No filename if reading from stdin
+    printf("%d %d %d %s\n", l, w, c, vowels); 
 }
 
 int
