@@ -43,7 +43,7 @@ wc(int fd, char *name)
     printf("%d %d %d %d %s\n", l, w, c, vowels, name); // Modified the output to include the number of vowels
   else
     // No filename if reading from stdin
-    printf("%d %d %d %s\n", l, w, c, vowels); 
+    printf("%d %d %d %d\n", l, w, c, vowels); 
 }
 
 int
