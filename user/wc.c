@@ -2,16 +2,18 @@
 #include "kernel/stat.h"
 #include "kernel/fcntl.h"
 #include "user/user.h"
-
+/*
+@Author of the changes: Autrin Hakimi
+*/
 char buf[512];
 
 void
 wc(int fd, char *name)
 {
   int i, n;
-  int l, w, c, inword;
+  int l, w, c, inword, vowels; // Adding the variable vowels to count the number of vowels in the file
 
-  l = w = c = 0;
+  l = w = c = vowels = 0;
   inword = 0;
   while((n = read(fd, buf, sizeof(buf))) > 0){
     for(i=0; i<n; i++){
@@ -24,13 +26,15 @@ wc(int fd, char *name)
         w++;
         inword = 1;
       }
+
     }
   }
   if(n < 0){
     printf("wc: read error\n");
     exit(1);
   }
-  printf("%d %d %d %s\n", l, w, c, name);
+
+  printf("%d %d %d %s\n", l, w, c, name); 
 }
 
 int
