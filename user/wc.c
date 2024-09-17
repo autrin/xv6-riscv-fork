@@ -26,6 +26,10 @@ wc(int fd, char *name)
         w++;
         inword = 1;
       }
+      if (strchr("aAeEiIoOuU", buf[i])) // Checks if the character at position i is a vowel
+                                        //strchr() returns a pointer to the first occurrence of 
+                                        // the character buf[i] in the string "aAeEiIoOuU"
+        vowels++;
 
     }
   }
