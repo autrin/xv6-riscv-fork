@@ -149,7 +149,7 @@ found:
   printf("The pid of the process returning in allocproc() is %d\n", p->pid);
   printf("Printing the proc[]\n");
   for (int i = 0; i < NPROC; i++) {
-    printf("Index %d: pid=%d, p-proc: %d\n", 
+    printf("Index %d: pid=%d, p-proc: %ld\n", 
             i, proc[i].pid, p-proc);
   }
 
