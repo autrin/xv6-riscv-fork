@@ -146,6 +146,13 @@ found:
   p->context.ra = (uint64)forkret;
   p->context.sp = p->kstack + PGSIZE;
 
+  printf("The pid of the process returning in allocproc() is %d\n", p->pid);
+  printf("Printing the proc[]\n");
+  for (int i = 0; i < NPROC; i++) {
+    printf("Index %d: pid=%d, p-proc: %d\n", 
+            i, proc[i].pid, p-proc);
+  }
+
   return p;
 }
 
